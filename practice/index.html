@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .content {
+            width: 50%;
+            margin: auto;
+        }
+
+        header>h1 {
+            text-decoration: underline;
+        }
+
+        #addTask {
+            display: block;
+            margin-top: 10px;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            background-color: teal;
+        }
+
+        #textboxInputTask {
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            width: 80%;
+        }
+
+        .deleteBtn {
+            border: none;
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body style="background-color: seashell;">
+    <header>
+        <h1>JavaScript Technical Task</h1>
+    </header>
+    <div class="content">
+        <h2>Task List</h2>
+        <div class="row1">
+            <p>New Task</p>
+            <div id="col1">
+                <input type="text" name="task" id="textboxInputTask">
+                <button id="addTask">Add Task</button>
+            </div>
+        </div>
+        <h3>Tasks</h3>
+        <div class="row2">
+            <div id="col2" style="border: 1px solid red;">
+                <ul id="list"></ul>
+            </div>
+
+            <div id="col3" style="border: 1px solid green;">
+
+            </div>
+        </div>
+    </div>
+    <script src="./practice.js"></script>
+</body>
+
+</html>
