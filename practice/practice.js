@@ -1,42 +1,36 @@
 'use strict';
-const Task = [];
-let i = 0;
 
 // html Elements references
-const textbox1 = document.getElementById('textboxInputTask');
-const list = document.getElementById('list');
-const addBtn = document.getElementById('addTask');
-const ul = document.createElement('ul');
-
-// function to append literals
-// function addElements(listElem, text){    
-//     const li = document.createElement('li');
-//     var deleteBtn = document.createElement('button');
-//     deleteBtn.innerText = "X";
-//     deleteBtn.classList.add('deleteBtn');
-//     const textnode = document.createTextNode(text);
-//     listElem.appendChild(li).appendChild(textnode);
-//     li.appendChild(deleteBtn);
-// }
-
-// // lis
+let textbox1 = document.getElementById('textboxInputTask');
+let list = document.getElementById('list');
+let addBtn = document.getElementById('addTask');
+let clearAllBtn = document.getElementById('clearAll');
 
 // Event Listener
-addBtn.addEventListener('click', function(event){
-    Task[i] = textbox1.value ;
-    addElements(list, Task[i])
-    i++;
+addBtn.addEventListener('click', function (event) {
+    let textLength = textbox1.value.length;
+    if (textLength != 0) {
+        let li = document.createElement('li');
+        li.classList.add('taskList');
+        let deleteBtn = document.createElement('button');
+        list.style.border = '1px solid gainsboro';
+        li.innerText = textbox1.value;
+        deleteBtn.innerText = "X";
+        deleteBtn.classList.add('deleteBtn');
+        list.appendChild(li);
+        li.appendChild(deleteBtn);
+        textbox1.value = "";
+        // delete button event listener
+        deleteBtn.addEventListener('click', () => {
+            deleteBtn.parentElement.remove();
+        });
+    }
+    else {
+        alert('\"Please enter a task\"');
+    }
 });
 
-function addElements(listElem, text){    
-    const li = document.createElement('li');
-    const textnode = document.createTextNode(text);
-    listElem.appendChild(li).appendChild(textnode);
-    var deleteBtn = document.createElement('button');
-    deleteBtn.onclick = alert(this.id)
-    deleteBtn.innerText = "X";
-}
-
-deleteBtn.addEventListener('click', ()=> {
-    Task.splice()
-})
+// clear All button eventlistener
+clearAllBtn.addEventListener('click', () => {
+    list.innerHTML = " ";
+});

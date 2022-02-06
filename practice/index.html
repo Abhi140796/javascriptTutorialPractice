@@ -6,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+
         .content {
             width: 50%;
             margin: auto;
+            background-color: whitesmoke;
+            border: 1px solid gainsboro;
         }
 
         header>h1 {
             text-decoration: underline;
+            text-align: center;
         }
 
         #addTask {
@@ -33,8 +42,37 @@
         }
 
         .deleteBtn {
+            float: right;
+            text-align: right;
             border: none;
+            font-weight: bolder;
             color: red;
+            padding: 4px;
+            background: none;
+        }
+
+        #clearAll {
+            background-color: black;
+            color: white;
+            border: none;
+            height: 50px;
+            width: 90px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .taskList {
+            clear: both;
+            border: none;
+            border-bottom: 1px solid rgb(158, 151, 151);
+            padding: 10px;
+            list-style-type: decimal;
+            width: 100%;
+        }
+
+        .row1,
+        .row2 {
+            margin: 10px;
         }
     </style>
     <title>Document</title>
@@ -49,18 +87,18 @@
         <div class="row1">
             <p>New Task</p>
             <div id="col1">
-                <input type="text" name="task" id="textboxInputTask">
+                <input type="text" name="task" id="textboxInputTask" />
                 <button id="addTask">Add Task</button>
             </div>
         </div>
         <h3>Tasks</h3>
         <div class="row2">
-            <div id="col2" style="border: 1px solid red;">
+            <div id="col2" style="clear: both;">
                 <ul id="list"></ul>
             </div>
 
-            <div id="col3" style="border: 1px solid green;">
-
+            <div id="col3" style="clear: both;">
+                <button id="clearAll">Clear All</button>
             </div>
         </div>
     </div>
